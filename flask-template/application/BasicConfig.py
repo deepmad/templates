@@ -1,7 +1,14 @@
+import logging
 from urllib.parse import quote_plus as urlquote
 
 
 class Config:
+    # logging
+    LOG_LEVEL = logging.DEBUG
+    LOG_PATH = '../log'
+    LOG_PREFIX = 'daily'
+    LOG_MAX = 1024*1024
+
     MYSQL_USERNAME = 'deepmad'
     MYSQL_PASSWORD = 'deepmad'
     MYSQL_HOST = '127.0.0.1'

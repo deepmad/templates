@@ -11,3 +11,5 @@ pip install flask-sqlalchemy
 ```
 pip install cryptography
 ```
+- 使用pre_request校验参数  
+[pre_request](https://pre-request.readthedocs.io/en/master/quickstart.html)
