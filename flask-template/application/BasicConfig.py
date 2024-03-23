@@ -3,6 +3,9 @@ from urllib.parse import quote_plus as urlquote
 
 
 class Config:
+    # jwt config
+    JWT_SECRET = ''
+
     # logging
     LOG_LEVEL = logging.DEBUG
     LOG_PATH = '../log'

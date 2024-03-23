@@ -17,7 +17,7 @@ def required(value):
 
 
 rule2 = {
-    'name': Rule(required=True, callback=required)
+    'name': Rule(required=True)
 }
 
 

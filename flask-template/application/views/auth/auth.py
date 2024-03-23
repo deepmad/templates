@@ -1,16 +1,25 @@
 from flask import Blueprint
-from sqlalchemy import text
+from pre_request import Rule, pre
 
-from application.common.utils import response, common
-from application.config.database import db
-from application.models.system.sys_user import SysUser
+from application.common.utils import response, parser
+from application.config.jwt_config import JwtToken
+from application.config.rules import rule
 
 route = Blueprint('auth', __name__)
 
+rule1 = {
+    'account': Rule(required=True, callback=rule.required)
+}
 
-@route.route('/token')
+
+@route.post('/token')
+@pre.catch(rule1)
 def token():
-    SysUser.query.all()
-    users = db.session.execute(db.select(SysUser)).scalars().all()
-    rows = db.session.execute(text('select * from dm_sys_user'))
-    return response.success(common.cursor2list(rows))
+    account = parser.RequestParser.get('account')
+    _payload = {
+        'account': account
+    }
+    _token = JwtToken.generate(_payload, expire=10)
+    return response.success({
+        'token': _token
+    })
