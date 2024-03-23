@@ -34,4 +34,6 @@ def create():
     # register application views
     register(app)
 
+    app.json.ensure_ascii = False
+
     return app

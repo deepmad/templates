@@ -8,4 +8,4 @@ route = Blueprint('demo_logging', __name__)
 @route.route('/log', methods=['GET', 'POST'])
 def log():
     current.logger.info('to fetch url %s', '/log')
-    return response.success()
+    return response.success(message='成功')
