@@ -10,6 +10,7 @@ app = create()
 
 @app.before_request
 def before_request():
+    app.logger.info('request url=')
     params = parser.RequestParser.all()
     app.logger.info('request params=%s', params)
 

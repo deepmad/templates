@@ -6,6 +6,7 @@ from application.views.demo.logging import route as views_demo_logging
 from application.views.demo.parser import route as views_demo_parser
 from application.views.demo.precheck import route as views_demo_precheck
 from application.views.demo.validation import route as views_demo_validation
+from application.views.file.file import route as views_file_file
 
 
 def register(app: Flask):
@@ -15,3 +16,4 @@ def register(app: Flask):
     app.register_blueprint(views_demo_precheck, url_prefix='/demo/pre_check')
     app.register_blueprint(views_demo_logging, url_prefix='/demo/logging')
     app.register_blueprint(views_demo_validation, url_prefix='/demo/validation')
+    app.register_blueprint(views_file_file, url_prefix='/file')
