@@ -20,3 +20,7 @@ def digits_(length):
 
 def unique_():
     return datetime.datetime.now().strftime('%Y%m%d%H%M%S%f') + digits_(4)
+
+
+def key_():
+    return datetime.datetime.now().strftime('%y%m%d%H%M%S%f')[:-2] + digits_(3)

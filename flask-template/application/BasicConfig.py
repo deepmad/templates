@@ -4,7 +4,7 @@ from urllib.parse import quote_plus as urlquote
 
 class Config:
     # file config
-    FILE_SAVE_ROOT = '../../datas'
+    FILE_SAVE_ROOT = '/datas'
 
     # jwt config
     JWT_SECRET = ''
